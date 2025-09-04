@@ -134,7 +134,7 @@ const ProfilePage = () => {
                   className={`w-full h-14 bg-gradient-to-r ${link.color} hover:shadow-lg hover:scale-105 transition-all duration-300 text-white border-0 font-medium group relative overflow-hidden`}
                   variant="default"
                 >
-                  <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="flex items-center justify-start w-full relative z-10">
                     <IconComponent className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300" />
                     <span className="text-left">{link.name}</span>
