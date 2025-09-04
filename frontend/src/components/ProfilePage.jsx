@@ -97,7 +97,7 @@ const ProfilePage = () => {
       <div className="absolute top-20 left-20 w-72 h-72 bg-gray-700 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse"></div>
       <div className="absolute bottom-20 right-20 w-72 h-72 bg-gray-600 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse delay-1000"></div>
       
-      <Card className="w-full max-w-md bg-white/10 backdrop-blur-lg border border-white/20 shadow-2xl relative z-10">
+      <Card className="w-full max-w-md bg-black/30 backdrop-blur-lg border border-gray-700/50 shadow-2xl relative z-10">
         <div className="p-8 text-center">
           {/* Profile Image */}
           <div 
