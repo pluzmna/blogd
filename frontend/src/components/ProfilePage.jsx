@@ -124,7 +124,13 @@ const ProfilePage = () => {
               return (
                 <Button
                   key={index}
-                  onClick={() => window.open(link.url, '_blank')}
+                  onClick={() => {
+                    if (link.url.startsWith('mailto:')) {
+                      window.location.href = link.url;
+                    } else {
+                      window.open(link.url, '_blank', 'noopener,noreferrer');
+                    }
+                  }}
                   className={`w-full h-14 bg-gradient-to-r ${link.color} hover:shadow-lg hover:scale-105 transition-all duration-300 text-white border-0 font-medium group relative overflow-hidden`}
                   variant="default"
                 >
