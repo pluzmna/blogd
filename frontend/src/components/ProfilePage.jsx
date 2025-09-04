@@ -112,8 +112,8 @@ const ProfilePage = () => {
           </div>
 
           {/* Profile Info */}
-          <h1 className="text-3xl font-bold text-white mb-2">pluzman</h1>
-          <p className="text-white/80 mb-8 leading-relaxed">
+          <h1 className="text-3xl font-bold text-gray-100 mb-2">pluzman</h1>
+          <p className="text-gray-300 mb-8 leading-relaxed">
             Dijital dünyada paylaşım ve etkileşim için tüm bağlantılarım burada
           </p>
 
