@@ -324,29 +324,12 @@
             border-bottom: none;
         }
 
-        .link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(255, 255, 255, 0.15);
-            opacity: 0;
-            transition: opacity 0.25s ease;
-        }
-
-        .link:hover::before {
-            opacity: 1;
-        }
-
         .link:hover {
-            transform: translateY(-1px) scale(1.01);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .link:active {
-            transform: translateY(0) scale(0.99);
+            background: rgba(255, 255, 255, 0.2);
             transition: all 0.1s ease;
         }
 
