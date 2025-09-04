@@ -145,8 +145,8 @@ const ProfilePage = () => {
           </div>
 
           {/* Footer */}
-          <div className="mt-8 pt-6 border-t border-white/20">
-            <p className="text-white/60 text-sm">
+          <div className="mt-8 pt-6 border-t border-gray-600/30">
+            <p className="text-gray-400 text-sm">
               © 2025 pluzman
             </p>
           </div>
