@@ -18,6 +18,12 @@ import {
 const ProfilePage = () => {
   const socialLinks = [
     {
+      name: "E-posta",
+      url: "mailto:dgiymat@gmail.com",
+      icon: Mail,
+      color: "from-red-600 to-pink-600"
+    },
+    {
       name: "Telegram Bot",
       url: "https://telegram.me/tavsiyeebot/pluzman",
       icon: MessageCircle,
