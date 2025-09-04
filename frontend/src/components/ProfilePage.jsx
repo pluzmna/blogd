@@ -86,7 +86,7 @@ const ProfilePage = () => {
   ];
 
   const handleProfileClick = () => {
-    window.open('https://t.me/pluzman', '_blank');
+    window.open('https://t.me/pluzman', '_blank', 'noopener,noreferrer');
   };
 
   return (
