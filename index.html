@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pluzman - Bağlantılarım</title>
+    <meta name="description" content="pluzman'ın tüm sosyal medya ve iletişim bağlantıları">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #000000 50%, #1a1a1a 100%);
+            min-height: 100vh;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 400px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(128, 128, 128, 0.3);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            border: 4px solid rgba(128, 128, 128, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.1);
+            border-color: rgba(200, 200, 200, 0.7);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #f0f0f0;
+        }
+
+        .bio {
+            color: #cccccc;
+            margin-bottom: 35px;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .link {
+            display: flex;
+            align-items: center;
+            padding: 16px 20px;
+            background: linear-gradient(135deg, var(--gradient-from), var(--gradient-to));
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+        }
+
+        .link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .link:hover::before {
+            opacity: 1;
+        }
+
+        .link:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .link i {
+            font-size: 1.2rem;
+            margin-right: 12px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .email { --gradient-from: #dc2626; --gradient-to: #ec4899; }
+        .telegram { --gradient-from: #3b82f6; --gradient-to: #06b6d4; }
+        .sesle { --gradient-from: #10b981; --gradient-to: #059669; }
+        .twitch { --gradient-from: #8b5cf6; --gradient-to: #7c3aed; }
+        .reddit { --gradient-from: #f97316; --gradient-to: #ef4444; }
+        .youtube { --gradient-from: #ef4444; --gradient-to: #ec4899; }
+        .feedback { --gradient-from: #4b5563; --gradient-to: #1f2937; }
+        .sticker { --gradient-from: #eab308; --gradient-to: #f59e0b; }
+        .theme { --gradient-from: #6366f1; --gradient-to: #2563eb; }
+        .github { --gradient-from: #374151; --gradient-to: #000000; }
+        .archive { --gradient-from: #14b8a6; --gradient-to: #06b6d4; }
+
+        .footer {
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(128, 128, 128, 0.2);
+            color: #999999;
+            font-size: 0.875rem;
+        }
+
+        .background-effects {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.1;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .bg-circle-1 {
+            top: 10%;
+            left: 10%;
+            width: 300px;
+            height: 300px;
+            background: #4b5563;
+            animation-delay: 0s;
+        }
+
+        .bg-circle-2 {
+            bottom: 10%;
+            right: 10%;
+            width: 250px;
+            height: 250px;
+            background: #374151;
+            animation-delay: 2s;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.1; }
+            50% { transform: scale(1.1); opacity: 0.05; }
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .container {
+                margin: 10px;
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            .link {
+                padding: 14px 16px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #404040;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #606060;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-effects">
+        <div class="bg-circle bg-circle-1"></div>
+        <div class="bg-circle bg-circle-2"></div>
+    </div>
+
+    <div class="container">
+        <div class="profile-image" onclick="openLink('https://t.me/pluzman')">
+            <img src="https://avatars.githubusercontent.com/u/194362840?v=4" alt="pluzman">
+        </div>
+        
+        <h1>pluzman</h1>
+        <p class="bio">Dijital dünyada paylaşım ve etkileşim için tüm bağlantılarım burada</p>
+        
+        <div class="links">
+            <a href="mailto:dgiymat@gmail.com" class="link email">
+                <i class="fas fa-envelope"></i>
+                E-posta
+            </a>
+            
+            <a href="https://telegram.me/tavsiyeebot/pluzman" target="_blank" rel="noopener noreferrer" class="link telegram">
+                <i class="fab fa-telegram"></i>
+                Telegram Bot
+            </a>
+            
+            <a href="https://www.seslee.com/join.php?code=9963c3d170aa639435be993f6e9b7d5e" target="_blank" rel="noopener noreferrer" class="link sesle">
+                <i class="fas fa-microphone"></i>
+                Sesle Chat
+            </a>
+            
+            <a href="https://www.twitch.tv/pluzfans" target="_blank" rel="noopener noreferrer" class="link twitch">
+                <i class="fab fa-twitch"></i>
+                Twitch TV
+            </a>
+            
+            <a href="https://www.reddit.com/user/CommunicationLevel72/" target="_blank" rel="noopener noreferrer" class="link reddit">
+                <i class="fab fa-reddit"></i>
+                Reddit
+            </a>
+            
+            <a href="https://www.youtube.com/@plusjell6172/posts" target="_blank" rel="noopener noreferrer" class="link youtube">
+                <i class="fab fa-youtube"></i>
+                YouTube
+            </a>
+            
+            <a href="https://github.com/pluzmna/blog/discussions" target="_blank" rel="noopener noreferrer" class="link feedback">
+                <i class="fas fa-comments"></i>
+                Geri Bildirim
+            </a>
+            
+            <a href="https://t.me/addstickers/t_me_addstickers_Kosmos_by_fStikBot" target="_blank" rel="noopener noreferrer" class="link sticker">
+                <i class="fas fa-laugh"></i>
+                Sticker Pack
+            </a>
+            
+            <a href="https://t.me/addtheme/pluzman2" target="_blank" rel="noopener noreferrer" class="link theme">
+                <i class="fas fa-palette"></i>
+                Tema Paketi
+            </a>
+            
+            <a href="https://github.com/pluzmna" target="_blank" rel="noopener noreferrer" class="link github">
+                <i class="fab fa-github"></i>
+                GitHub Sayfam
+            </a>
+            
+            <a href="https://archive.org/details/@_plus_jell" target="_blank" rel="noopener noreferrer" class="link archive">
+                <i class="fas fa-archive"></i>
+                Archive.org
+            </a>
+        </div>
+        
+        <div class="footer">
+            © 2025 pluzman
+        </div>
+    </div>
+
+    <script>
+        function openLink(url) {
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
+
+        // Smooth hover animations
+        document.querySelectorAll('.link').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px) scale(1.02)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Profile image click animation
+        document.querySelector('.profile-image').addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+        });
+    </script>
+</body>
+</html>
