@@ -101,7 +101,7 @@ const ProfilePage = () => {
         <div className="p-8 text-center">
           {/* Profile Image */}
           <div 
-            className="w-24 h-24 mx-auto mb-6 rounded-full border-4 border-white/30 overflow-hidden cursor-pointer transition-all duration-300 hover:scale-110 hover:border-white/50 hover:shadow-xl"
+            className="w-24 h-24 mx-auto mb-6 rounded-full border-4 border-gray-400/50 overflow-hidden cursor-pointer transition-all duration-300 hover:scale-110 hover:border-gray-300/70 hover:shadow-xl"
             onClick={handleProfileClick}
           >
             <img
