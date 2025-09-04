@@ -11,7 +11,8 @@ import {
   Sticker,
   Palette,
   Github,
-  Archive
+  Archive,
+  Mail
 } from 'lucide-react';
 
 const ProfilePage = () => {
