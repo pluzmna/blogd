@@ -290,14 +290,89 @@
             50% { transform: scale(1.1); opacity: 0.05; }
         }
 
+        /* Status bar */
+        .status-bar {
+            position: absolute;
+            top: 5px;
+            left: 0;
+            right: 0;
+            height: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #fff;
+            z-index: 5;
+        }
+
+        .status-left {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .status-right {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .battery {
+            width: 20px;
+            height: 10px;
+            border: 1px solid #fff;
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .battery::after {
+            content: '';
+            position: absolute;
+            right: -3px;
+            top: 3px;
+            width: 2px;
+            height: 4px;
+            background: #fff;
+            border-radius: 0 1px 1px 0;
+        }
+
+        .battery-fill {
+            width: 70%;
+            height: 100%;
+            background: linear-gradient(90deg, #4ade80, #22c55e);
+            border-radius: 1px;
+        }
+
+        .signal-bars {
+            display: flex;
+            gap: 1px;
+            align-items: flex-end;
+        }
+
+        .bar {
+            width: 3px;
+            background: #fff;
+            border-radius: 1px;
+        }
+
+        .bar:nth-child(1) { height: 3px; }
+        .bar:nth-child(2) { height: 5px; }
+        .bar:nth-child(3) { height: 7px; }
+        .bar:nth-child(4) { height: 9px; }
+
         /* Responsive */
         @media (max-width: 480px) {
-            .container {
+            .phone-frame {
                 width: 95%;
-                height: 85vh;
-                max-height: 650px;
+                height: 90vh;
+                max-height: 700px;
+                padding: 12px;
+            }
+            
+            .container {
                 padding: 20px 15px;
-                border-radius: 20px;
             }
             
             .profile-image {
@@ -323,11 +398,20 @@
             .link span {
                 font-size: 0.9rem;
             }
+
+            .phone-notch {
+                width: 120px;
+                height: 22px;
+            }
         }
 
         @media (max-width: 320px) {
-            .container {
+            .phone-frame {
                 width: 98%;
+                padding: 10px;
+            }
+            
+            .container {
                 padding: 15px 12px;
             }
             
