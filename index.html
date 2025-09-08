@@ -1402,6 +1402,21 @@
         let history = [];
         let historyIndex = -1;
 
+        function scrollToWebView() {
+            // Smooth scroll to bottom of the page to show web content
+            const container = document.querySelector('.container');
+            container.scrollTo({
+                top: container.scrollHeight,
+                behavior: 'smooth'
+            });
+            
+            // Also scroll the main page down a bit
+            window.scrollTo({
+                top: window.scrollY + 200,
+                behavior: 'smooth'
+            });
+        }
+
         function openBrowserOverlay() {
             const overlay = document.getElementById('browser-overlay');
             overlay.classList.add('active');
