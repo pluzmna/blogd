@@ -1209,70 +1209,92 @@
                     © 2025 pluzman
                 </div>
             </div>
-
-            <!-- Web Browser Container -->
-            <div class="web-viewer" id="browser-container">
-                <!-- URL Bar -->
-                <div class="url-bar">
-                    <input type="text" class="url-input" id="url-input" placeholder="Web sitesi URL'si girin...">
-                    <button class="go-btn" onclick="loadUrl()">Git</button>
-                </div>
-
-                <!-- Quick Links -->
-                <div class="quick-links">
-                    <a class="quick-link" onclick="loadPage('https://twitter.com')">
-                        <i class="fab fa-twitter"></i> Twitter
-                    </a>
-                    <a class="quick-link" onclick="loadPage('https://instagram.com')">
-                        <i class="fab fa-instagram"></i> Instagram
-                    </a>
-                    <a class="quick-link" onclick="loadPage('https://youtube.com')">
-                        <i class="fab fa-youtube"></i> YouTube
-                    </a>
-                    <a class="quick-link" onclick="loadPage('https://reddit.com')">
-                        <i class="fab fa-reddit"></i> Reddit
-                    </a>
-                    <a class="quick-link" onclick="loadPage('https://tiktok.com')">
-                        <i class="fab fa-tiktok"></i> TikTok
-                    </a>
-                    <a class="quick-link" onclick="loadPage('https://facebook.com')">
-                        <i class="fab fa-facebook"></i> Facebook
-                    </a>
-                </div>
-
-                <!-- Navigation Controls -->
-                <div class="nav-controls">
-                    <button class="nav-btn" id="back-btn" onclick="goBack()" disabled>
-                        <i class="fas fa-arrow-left"></i>
-                    </button>
-                    <button class="nav-btn" id="forward-btn" onclick="goForward()" disabled>
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
-                    <button class="nav-btn" onclick="reloadPage()">
-                        <i class="fas fa-redo"></i>
-                    </button>
-                    <button class="nav-btn" onclick="openInNewTab()">
-                        <i class="fas fa-external-link-alt"></i>
-                    </button>
-                    <div style="flex: 1;"></div>
-                    <button class="nav-btn" onclick="goHome()">
-                        <i class="fas fa-home"></i>
-                    </button>
-                </div>
-
-                <!-- iframe Container -->
-                <div class="iframe-container">
-                    <div class="iframe-loading" id="loading-indicator">
-                        <div class="loading-spinner"></div>
-                        <span>Sayfa yükleniyor...</span>
-                    </div>
-                    <iframe class="web-iframe" id="web-iframe" style="display: none;"></iframe>
-                </div>
-            </div>
         </div>
         
         <!-- Phone Home Indicator -->
         <div class="phone-home-indicator"></div>
+    </div>
+
+    <!-- Floating Browser Widget -->
+    <div class="floating-browser-widget" onclick="openBrowserOverlay()">
+        <i class="fas fa-globe"></i>
+    </div>
+
+    <!-- Browser Overlay Modal -->
+    <div class="browser-overlay" id="browser-overlay">
+        <div class="browser-modal">
+            <div class="browser-header">
+                <div class="browser-title">
+                    <i class="fas fa-globe"></i>
+                    Web Tarayıcısı
+                </div>
+                <button class="close-browser" onclick="closeBrowserOverlay()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="browser-content">
+                <!-- Web Browser Container -->
+                <div class="web-viewer" id="browser-container">
+                    <!-- URL Bar -->
+                    <div class="url-bar">
+                        <input type="text" class="url-input" id="url-input" placeholder="Web sitesi URL'si girin...">
+                        <button class="go-btn" onclick="loadUrl()">Git</button>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="quick-links">
+                        <a class="quick-link" onclick="loadPage('https://twitter.com')">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <a class="quick-link" onclick="loadPage('https://instagram.com')">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                        <a class="quick-link" onclick="loadPage('https://youtube.com')">
+                            <i class="fab fa-youtube"></i> YouTube
+                        </a>
+                        <a class="quick-link" onclick="loadPage('https://reddit.com')">
+                            <i class="fab fa-reddit"></i> Reddit
+                        </a>
+                        <a class="quick-link" onclick="loadPage('https://tiktok.com')">
+                            <i class="fab fa-tiktok"></i> TikTok
+                        </a>
+                        <a class="quick-link" onclick="loadPage('https://facebook.com')">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                    </div>
+
+                    <!-- Navigation Controls -->
+                    <div class="nav-controls">
+                        <button class="nav-btn" id="back-btn" onclick="goBack()" disabled>
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <button class="nav-btn" id="forward-btn" onclick="goForward()" disabled>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button class="nav-btn" onclick="reloadPage()">
+                            <i class="fas fa-redo"></i>
+                        </button>
+                        <button class="nav-btn" onclick="openInNewTab()">
+                            <i class="fas fa-external-link-alt"></i>
+                        </button>
+                        <div style="flex: 1;"></div>
+                        <button class="nav-btn" onclick="closeBrowserOverlay()">
+                            <i class="fas fa-home"></i>
+                        </button>
+                    </div>
+
+                    <!-- iframe Container -->
+                    <div class="iframe-container">
+                        <div class="iframe-loading" id="loading-indicator">
+                            <div class="loading-spinner"></div>
+                            <span>Sayfa yükleniyor...</span>
+                        </div>
+                        <iframe class="web-iframe" id="web-iframe" style="display: none;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
