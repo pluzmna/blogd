@@ -1312,20 +1312,10 @@
         let historyIndex = -1;
 
         function scrollToWebView() {
-            // Hide the button with animation
-            const button = document.querySelector('.browse-internet-btn');
-            button.classList.add('hide');
-
             // Smooth scroll to bottom of the page to show web content
             const container = document.querySelector('.container');
             container.scrollTo({
                 top: container.scrollHeight,
-                behavior: 'smooth'
-            });
-
-            // Also scroll the main page down a bit
-            window.scrollTo({
-                top: window.scrollY + 200,
                 behavior: 'smooth'
             });
         }
