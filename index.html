@@ -93,11 +93,11 @@
 
         /* Floating Browser Widget */
         .floating-browser-widget {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 60px;
-            height: 60px;
+            position: absolute;
+            top: 35px;
+            right: 25px;
+            width: 32px;
+            height: 32px;
             background: linear-gradient(135deg, #007AFF, #0056D6);
             border-radius: 50%;
             display: flex;
@@ -105,23 +105,23 @@
             justify-content: center;
             cursor: pointer;
             box-shadow: 
-                0 8px 25px rgba(0, 122, 255, 0.3),
-                0 4px 12px rgba(0, 0, 0, 0.2);
+                0 4px 12px rgba(0, 122, 255, 0.3),
+                0 2px 6px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
-            z-index: 1000;
-            border: 3px solid rgba(255, 255, 255, 0.2);
+            z-index: 100;
+            border: 2px solid rgba(255, 255, 255, 0.15);
         }
 
         .floating-browser-widget:hover {
-            transform: scale(1.1);
+            transform: scale(1.15);
             box-shadow: 
-                0 12px 35px rgba(0, 122, 255, 0.4),
-                0 6px 18px rgba(0, 0, 0, 0.3);
+                0 6px 16px rgba(0, 122, 255, 0.4),
+                0 3px 8px rgba(0, 0, 0, 0.3);
         }
 
         .floating-browser-widget i {
             color: white;
-            font-size: 1.4rem;
+            font-size: 0.8rem;
             animation: pulse 2s ease-in-out infinite;
         }
 
