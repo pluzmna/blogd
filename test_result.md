@@ -202,17 +202,17 @@ frontend:
         - agent: "main"
         - comment: "Floating widget like Facebook Messenger implemented with pulse animation and hover effects"
 
-  - task: "Create browser overlay modal instead of tabs"
+  - task: "Fix mobile responsive design and color harmony issues"
     implemented: true
-    working: true
+    working: false
     file: "/app/index.html"
     stuck_count: 0
     priority: "high"
-    needs_retesting: false
+    needs_retesting: true
     status_history:
-        - working: true
+        - working: false
         - agent: "main"
-        - comment: "Modal overlay with backdrop blur, ESC key support, and click-outside-to-close functionality"
+        - comment: "User reported: telefon ekran boyutu ve telefon pozisyonu bozuldu internette gezin yazısının renleri çok uyumsuz. Fixed button colors to match background gradient (cyan-teal-orange), improved phone frame with material design, updated responsive breakpoints for better mobile display."
 
 metadata:
   created_by: "main_agent"
