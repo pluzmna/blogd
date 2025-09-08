@@ -943,7 +943,20 @@
                 </div>
             </div>
 
-            <div class="container">
+            <!-- Tab Navigation -->
+            <div class="tab-navigation">
+                <button class="tab-button active" onclick="switchTab('contacts')">
+                    <i class="fas fa-user-circle" style="margin-right: 6px;"></i>
+                    Rehber
+                </button>
+                <button class="tab-button" onclick="switchTab('browser')">
+                    <i class="fas fa-globe" style="margin-right: 6px;"></i>
+                    Tarayıcı
+                </button>
+            </div>
+
+            <!-- Contacts Container -->
+            <div class="container active" id="contacts-container">
                 <!-- Contact Header -->
                 <div class="contact-header">
                     <div class="header-title">
