@@ -1152,6 +1152,159 @@
     </div>
 
     <script>
+        // Browser functionality
+        let currentUrl = '';
+        let history = [];
+        let historyIndex = -1;
+
+        function switchTab(tab) {
+            // Update tab buttons
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Show/hide containers
+            if (tab === 'contacts') {
+                document.getElementById('contacts-container').classList.add('active');
+                document.getElementById('browser-container').classList.remove('active');
+            } else {
+                document.getElementById('contacts-container').classList.remove('active');
+                document.getElementById('browser-container').classList.add('active');
+            }
+        }
+
+        function loadUrl() {
+            const urlInput = document.getElementById('url-input');
+            let url = urlInput.value.trim();
+            
+            if (!url) return;
+            
+            // Add https:// if no protocol specified
+            if (!url.match(/^https?:\/\//)) {
+                url = 'https://' + url;
+            }
+            
+            loadPage(url);
+        }
+
+        function loadPage(url) {
+            const iframe = document.getElementById('web-iframe');
+            const loading = document.getElementById('loading-indicator');
+            const urlInput = document.getElementById('url-input');
+            
+            // Show loading indicator
+            loading.style.display = 'flex';
+            iframe.style.display = 'none';
+            
+            // Update URL input
+            urlInput.value = url;
+            currentUrl = url;
+            
+            // Add to history
+            if (historyIndex < history.length - 1) {
+                history = history.slice(0, historyIndex + 1);
+            }
+            history.push(url);
+            historyIndex = history.length - 1;
+            
+            updateNavigationButtons();
+            
+            // Load the page
+            iframe.src = url;
+            
+            // Hide loading when iframe loads
+            iframe.onload = function() {
+                loading.style.display = 'none';
+                iframe.style.display = 'block';
+            };
+            
+            // Handle loading errors
+            iframe.onerror = function() {
+                loading.innerHTML = '<i class="fas fa-exclamation-triangle"></i><span>Sayfa yüklenemedi</span>';
+            };
+        }
+
+        function goBack() {
+            if (historyIndex > 0) {
+                historyIndex--;
+                const url = history[historyIndex];
+                loadPageFromHistory(url);
+            }
+        }
+
+        function goForward() {
+            if (historyIndex < history.length - 1) {
+                historyIndex++;
+                const url = history[historyIndex];
+                loadPageFromHistory(url);
+            }
+        }
+
+        function loadPageFromHistory(url) {
+            const iframe = document.getElementById('web-iframe');
+            const loading = document.getElementById('loading-indicator');
+            const urlInput = document.getElementById('url-input');
+            
+            loading.style.display = 'flex';
+            iframe.style.display = 'none';
+            
+            urlInput.value = url;
+            currentUrl = url;
+            
+            iframe.src = url;
+            
+            iframe.onload = function() {
+                loading.style.display = 'none';
+                iframe.style.display = 'block';
+            };
+            
+            updateNavigationButtons();
+        }
+
+        function reloadPage() {
+            if (currentUrl) {
+                const iframe = document.getElementById('web-iframe');
+                const loading = document.getElementById('loading-indicator');
+                
+                loading.style.display = 'flex';
+                iframe.style.display = 'none';
+                
+                iframe.src = currentUrl;
+                
+                iframe.onload = function() {
+                    loading.style.display = 'none';
+                    iframe.style.display = 'block';
+                };
+            }
+        }
+
+        function openInNewTab() {
+            if (currentUrl) {
+                window.open(currentUrl, '_blank', 'noopener,noreferrer');
+            }
+        }
+
+        function goHome() {
+            switchTab('contacts');
+            // Update tab buttons manually
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-button')[0].classList.add('active');
+        }
+
+        function updateNavigationButtons() {
+            const backBtn = document.getElementById('back-btn');
+            const forwardBtn = document.getElementById('forward-btn');
+            
+            backBtn.disabled = historyIndex <= 0;
+            forwardBtn.disabled = historyIndex >= history.length - 1;
+        }
+
+        // Handle Enter key in URL input
+        document.getElementById('url-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                loadUrl();
+            }
+        });
+
         function openLink(url) {
             window.open(url, '_blank', 'noopener,noreferrer');
         }
@@ -1174,6 +1327,9 @@
                 this.style.transform = 'scale(1)';
             }, 150);
         });
+
+        // Initialize
+        updateNavigationButtons();
     </script>
 </body>
 </html>
