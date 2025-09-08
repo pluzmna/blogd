@@ -31,17 +31,40 @@
         .phone-frame {
             max-width: 400px;
             width: 95%;
-            height: 90vh;
-            max-height: 800px;
-            background: linear-gradient(145deg, rgba(42, 42, 42, 0.9), rgba(26, 26, 26, 0.9));
-            backdrop-filter: blur(20px);
+            height: 85vh;
+            max-height: 780px;
+            background: linear-gradient(145deg, 
+                rgba(30, 41, 59, 0.95) 0%,
+                rgba(51, 65, 85, 0.9) 50%,
+                rgba(30, 41, 59, 0.95) 100%);
+            backdrop-filter: blur(25px);
             border-radius: 35px;
-            padding: 15px;
+            padding: 18px;
             box-shadow: 
-                0 30px 60px rgba(0, 0, 0, 0.6),
+                0 25px 50px rgba(0, 0, 0, 0.5),
+                0 15px 35px rgba(36, 255, 255, 0.1),
+                0 5px 15px rgba(255, 120, 0, 0.1),
                 inset 0 2px 4px rgba(255, 255, 255, 0.1),
-                0 0 0 1px rgba(255, 255, 255, 0.1);
+                inset 0 -2px 4px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(36, 255, 255, 0.15);
             position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .phone-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(145deg, 
+                rgba(36, 255, 255, 0.05) 0%,
+                transparent 30%,
+                transparent 70%,
+                rgba(255, 120, 0, 0.05) 100%);
+            border-radius: 35px;
+            pointer-events: none;
         }
 
         .phone-notch {
