@@ -23,7 +23,7 @@
             display: flex;
             align-items: flex-start;
             justify-content: center;
-            padding: 140px 20px 20px 20px;
+            padding: 120px 20px 20px 20px;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
@@ -219,6 +219,7 @@
             transform: translateX(-50%) translateY(-20px) scale(0.8);
             pointer-events: none;
         }
+
         .floating-browser-widget {
             position: absolute;
             top: 75px;
@@ -293,7 +294,7 @@
             backdrop-filter: blur(30px);
             border-radius: 25px;
             padding: 20px;
-            box-shadow: 
+            box-shadow:
                 0 30px 60px rgba(0, 0, 0, 0.8),
                 inset 0 2px 4px rgba(255, 255, 255, 0.1),
                 0 0 0 1px rgba(255, 255, 255, 0.1);
@@ -656,7 +657,7 @@
 
         .profile-image:hover {
             transform: scale(1.1);
-            border-color: rgba(200, 200, 200, 0.7);
+            border-color: rgba(200, 200,200, 0.7);
             box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
         }
 
@@ -790,111 +791,6 @@
         .github { --gradient-from: #52525b; --gradient-to: #27272a; }
         .archive { --gradient-from: #0891b2; --gradient-to: #0e7490; }
 
-        /* Contact Header Styles */
-        .contact-header {
-            padding: 10px 0 20px 0;
-            flex-shrink: 0;
-        }
-
-        .header-title {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            color: #007AFF;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-
-        .header-title i.fa-chevron-left {
-            font-size: 1.1rem;
-            cursor: pointer;
-        }
-
-        .header-actions i {
-            font-size: 1.1rem;
-            cursor: pointer;
-        }
-
-        /* Contact Profile Styles */
-        .contact-profile {
-            text-align: center;
-            padding: 20px 0;
-            flex-shrink: 0;
-        }
-
-        .contact-profile .profile-image {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 15px;
-        }
-
-        .contact-profile h1 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-            color: #ffffff;
-        }
-
-        .contact-subtitle {
-            color: #8E8E93;
-            font-size: 1rem;
-            margin-bottom: 30px;
-        }
-
-        /* Contact Actions Styles */
-        .contact-actions {
-            display: flex;
-            justify-content: space-around;
-            padding: 20px 0 20px 0;
-            flex-shrink: 0;
-        }
-
-        .action-btn {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .action-btn:hover {
-            transform: scale(1.05);
-        }
-
-        .action-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 8px;
-            transition: all 0.2s ease;
-        }
-
-        .email-action {
-            background: #007AFF;
-        }
-
-        .call-action {
-            background: #34C759;
-        }
-
-        .video-action {
-            background: #007AFF;
-        }
-
-        .action-icon i {
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        .action-btn span {
-            color: #8E8E93;
-            font-size: 0.8rem;
-            font-weight: 400;
-        }
-
         .footer {
             padding-top: 12px;
             border-top: 1px solid rgba(128, 128, 128, 0.2);
@@ -918,7 +814,7 @@
             border-radius: 50%;
             filter: blur(60px);
             opacity: 0.1;
-            animation: pulse 4s ease-in-out infinite;
+            animation: pulse-bg 4s ease-in-out infinite;
         }
 
         .bg-circle-1 {
@@ -939,7 +835,7 @@
             animation-delay: 2s;
         }
 
-        @keyframes pulse {
+        @keyframes pulse-bg {
             0%, 100% { transform: scale(1); opacity: 0.1; }
             50% { transform: scale(1.1); opacity: 0.05; }
         }
@@ -1019,7 +915,7 @@
         /* Responsive */
         @media (max-width: 480px) {
             body {
-                padding: 120px 15px 15px 15px;
+                padding: 100px 15px 15px 15px;
             }
             
             .phone-frame {
@@ -1068,15 +964,6 @@
                 height: 22px;
             }
 
-            .tab-button {
-                padding: 8px 10px;
-                font-size: 0.8rem;
-            }
-
-            .tab-button i {
-                margin-right: 4px !important;
-            }
-
             .url-input {
                 padding: 10px 12px;
                 font-size: 0.8rem;
@@ -1096,10 +983,6 @@
             .quick-link {
                 padding: 6px 12px;
                 font-size: 0.75rem;
-            }
-
-            .web-viewer {
-                padding: 12px;
             }
 
             .browse-internet-btn {
@@ -1128,7 +1011,7 @@
 
         @media (max-width: 320px) {
             body {
-                padding: 110px 10px 10px 10px;
+                padding: 90px 10px 10px 10px;
             }
             
             .phone-frame {
@@ -1153,11 +1036,6 @@
             }
             
             .link span {
-                font-size: 0.75rem;
-            }
-
-            .tab-button {
-                padding: 6px 8px;
                 font-size: 0.75rem;
             }
 
@@ -1254,13 +1132,13 @@
 
         <!-- Phone Notch -->
         <div class="phone-notch"></div>
-        
+
         <!-- Phone Camera -->
         <div class="phone-camera"></div>
-        
+
         <!-- Phone Speaker -->
         <div class="phone-speaker"></div>
-        
+
         <!-- Phone Screen -->
         <div class="phone-screen">
             <!-- Floating Browser Widget -->
@@ -1332,7 +1210,7 @@
                         <span>FaceTime</span>
                     </div>
                 </div>
-        
+
                 <!-- Contact Info Sections -->
                 <div class="contact-info-section">
                     <div class="section-header">İletişim</div>
@@ -1358,25 +1236,25 @@
                             <span>Telegram Bot</span>
                             <div class="link-subtitle">bot</div>
                         </a>
-                        
+
                         <a href="https://www.seslee.com/join.php?code=9963c3d170aa639435be993f6e9b7d5e" target="_blank" rel="noopener noreferrer" class="link">
                             <i class="fas fa-microphone"></i>
                             <span>Sesle Chat</span>
                             <div class="link-subtitle">sesli sohbet</div>
                         </a>
-                        
+
                         <a href="https://www.twitch.tv/pluzfans" target="_blank" rel="noopener noreferrer" class="link">
                             <i class="fab fa-twitch"></i>
                             <span>Twitch TV</span>
                             <div class="link-subtitle">yayın</div>
                         </a>
-                        
+
                         <a href="https://www.reddit.com/user/CommunicationLevel72/" target="_blank" rel="noopener noreferrer" class="link">
                             <i class="fab fa-reddit"></i>
                             <span>Reddit</span>
                             <div class="link-subtitle">forum</div>
                         </a>
-                        
+
                         <a href="https://www.youtube.com/@plusjell6172/posts" target="_blank" rel="noopener noreferrer" class="link">
                             <i class="fab fa-youtube"></i>
                             <span>YouTube</span>
@@ -1393,25 +1271,25 @@
                             <span>Geri Bildirim</span>
                             <div class="link-subtitle">tartışma</div>
                         </a>
-                        
+
                         <a href="https://t.me/addstickers/t_me_addstickers_Kosmos_by_fStikBot" target="_blank" rel="noopener noreferrer" class="link">
                             <i class="fas fa-laugh"></i>
                             <span>Sticker Pack</span>
                             <div class="link-subtitle">çıkartma</div>
                         </a>
-                        
+
                         <a href="https://t.me/addtheme/pluzman2" target="_blank" rel="noopener noreferrer" class="link">
                             <i class="fas fa-palette"></i>
                             <span>Tema Paketi</span>
                             <div class="link-subtitle">tema</div>
                         </a>
-                        
+
                         <a href="https://github.com/pluzmna" target="_blank" rel="noopener noreferrer" class="link">
                             <i class="fab fa-github"></i>
                             <span>GitHub</span>
                             <div class="link-subtitle">kod</div>
                         </a>
-                        
+
                         <a href="https://archive.org/details/@_plus_jell" target="_blank" rel="noopener noreferrer" class="link">
                             <i class="fas fa-archive"></i>
                             <span>Archive.org</span>
@@ -1419,13 +1297,13 @@
                         </a>
                     </div>
                 </div>
-        
+
                 <div class="footer">
                     © 2025 pluzman
                 </div>
             </div>
         </div>
-        
+
         <!-- Phone Home Indicator -->
         <div class="phone-home-indicator"></div>
     </div>
@@ -1442,7 +1320,7 @@
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            
+
             <div class="browser-content">
                 <!-- Web Browser Container -->
                 <div class="web-viewer" id="browser-container">
@@ -1517,14 +1395,14 @@
             // Hide the button with animation
             const button = document.querySelector('.browse-internet-btn');
             button.classList.add('hide');
-            
+
             // Smooth scroll to bottom of the page to show web content
             const container = document.querySelector('.container');
             container.scrollTo({
                 top: container.scrollHeight,
                 behavior: 'smooth'
             });
-            
+
             // Also scroll the main page down a bit
             window.scrollTo({
                 top: window.scrollY + 200,
@@ -1536,11 +1414,11 @@
             // Hide the button with animation
             const button = document.querySelector('.browse-internet-btn');
             button.classList.add('hide');
-            
+
             const overlay = document.getElementById('browser-overlay');
             overlay.classList.add('active');
             document.body.style.overflow = 'hidden';
-            
+
             // Auto-load DuckDuckGo when browser opens
             setTimeout(() => {
                 loadPage('https://duckduckgo.com/');
@@ -1570,14 +1448,14 @@
         function loadUrl() {
             const urlInput = document.getElementById('url-input');
             let url = urlInput.value.trim();
-            
+
             if (!url) return;
-            
+
             // Add https:// if no protocol specified
             if (!url.match(/^https?:\/\//)) {
                 url = 'https://' + url;
             }
-            
+
             loadPage(url);
         }
 
@@ -1585,33 +1463,33 @@
             const iframe = document.getElementById('web-iframe');
             const loading = document.getElementById('loading-indicator');
             const urlInput = document.getElementById('url-input');
-            
+
             // Show loading indicator
             loading.style.display = 'flex';
             iframe.style.display = 'none';
-            
+
             // Update URL input
             urlInput.value = url;
             currentUrl = url;
-            
+
             // Add to history
             if (historyIndex < history.length - 1) {
                 history = history.slice(0, historyIndex + 1);
             }
             history.push(url);
             historyIndex = history.length - 1;
-            
+
             updateNavigationButtons();
-            
+
             // Load the page
             iframe.src = url;
-            
+
             // Hide loading when iframe loads
             iframe.onload = function() {
                 loading.style.display = 'none';
                 iframe.style.display = 'block';
             };
-            
+
             // Handle loading errors
             iframe.onerror = function() {
                 loading.innerHTML = '<i class="fas fa-exclamation-triangle"></i><span>Sayfa yüklenemedi</span>';
@@ -1638,20 +1516,20 @@
             const iframe = document.getElementById('web-iframe');
             const loading = document.getElementById('loading-indicator');
             const urlInput = document.getElementById('url-input');
-            
+
             loading.style.display = 'flex';
             iframe.style.display = 'none';
-            
+
             urlInput.value = url;
             currentUrl = url;
-            
+
             iframe.src = url;
-            
+
             iframe.onload = function() {
                 loading.style.display = 'none';
                 iframe.style.display = 'block';
             };
-            
+
             updateNavigationButtons();
         }
 
@@ -1659,12 +1537,12 @@
             if (currentUrl) {
                 const iframe = document.getElementById('web-iframe');
                 const loading = document.getElementById('loading-indicator');
-                
+
                 loading.style.display = 'flex';
                 iframe.style.display = 'none';
-                
+
                 iframe.src = currentUrl;
-                
+
                 iframe.onload = function() {
                     loading.style.display = 'none';
                     iframe.style.display = 'block';
@@ -1681,7 +1559,7 @@
         function updateNavigationButtons() {
             const backBtn = document.getElementById('back-btn');
             const forwardBtn = document.getElementById('forward-btn');
-            
+
             backBtn.disabled = historyIndex <= 0;
             forwardBtn.disabled = historyIndex >= history.length - 1;
         }
@@ -1702,7 +1580,7 @@
             link.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-2px) scale(1.02)';
             });
-            
+
             link.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0) scale(1)';
             });
