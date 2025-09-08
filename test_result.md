@@ -190,17 +190,29 @@ frontend:
         - agent: "main"
         - comment: "Responsive design optimized for mobile devices with phone frame mockup"
 
-  - task: "Maintain original personal links functionality"
+  - task: "Replace tab navigation with floating browser widget (Messenger-style)"
     implemented: true
     working: true
     file: "/app/index.html"
     stuck_count: 0
-    priority: "medium"
+    priority: "high"
     needs_retesting: false
     status_history:
         - working: true
         - agent: "main"
-        - comment: "Original pluzman personal links preserved in contacts tab"
+        - comment: "Floating widget like Facebook Messenger implemented with pulse animation and hover effects"
+
+  - task: "Create browser overlay modal instead of tabs"
+    implemented: true
+    working: true
+    file: "/app/index.html"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+        - agent: "main"
+        - comment: "Modal overlay with backdrop blur, ESC key support, and click-outside-to-close functionality"
 
 metadata:
   created_by: "main_agent"
