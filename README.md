@@ -1,9 +1,10 @@
-# pluzman - Kişisel Bağlantılar Sayfası
+# pluzman - Telegram Mini App & Web Viewer
 
-Bu GitHub Pages sitesi pluzman'ın tüm sosyal medya ve iletişim bağlantılarını içerir.
+Bu Telegram Mini App, pluzman'ın kişisel bağlantılarını ve web sayfası görüntüleyici özelliğini içerir. Mobil cihazlara özel olarak tasarlanmıştır.
 
 ## Özellikler
 
+### 📱 Kişisel Bağlantılar
 - 📧 E-posta: dgiymat@gmail.com
 - 🤖 Telegram Bot
 - 🎤 Sesle Chat
@@ -16,21 +17,42 @@ Bu GitHub Pages sitesi pluzman'ın tüm sosyal medya ve iletişim bağlantılar�
 - 💻 GitHub
 - 📚 Archive.org
 
+### 🌐 Web Görüntüleyici
+- **URL Girme**: Herhangi bir web sitesini görüntüle
+- **Hızlı Bağlantılar**: Popüler sosyal medya siteleri
+- **Navigasyon Kontrolleri**: İleri, geri, yenile, ana sayfa
+- **Yeni Sekmede Aç**: Siteleri tarayıcıda aç
+- **Geçmiş Yönetimi**: Ziyaret edilen sayfalar arası geçiş
+
 ## Teknik Detaylar
 
-- **Tamamen koyu mod** tasarım
-- **Glass morphism** efektleri
-- **Responsive** tasarım
-- **Tüm linkler yeni sekmede** açılır
-- **Font Awesome** ikonları
-- **Inter** font ailesi
+- **Modern UI**: Glass morphism efektleri ile modern tasarım
+- **Tab Sistemi**: Kişisel bağlantılar ve web görüntüleyici arası geçiş
+- **Tamamen responsive**: Mobil cihazlar için optimize edilmiş
+- **Telegram Mini App**: Telegram içinde sorunsuz çalışır
+- **Dark Mode**: Özel gradient background ile koyu tema
+- **Font Awesome**: Profesyonel ikonlar
+- **Inter Font**: Modern tipografi
+
+## Kullanım
+
+1. **Kişisel Bağlantılar**: Ana sekmede pluzman'ın tüm sosyal medya bağlantılarına erişim
+2. **Web Görüntüleyici**: 
+   - Tarayıcı sekmesine geç
+   - URL gir veya hızlı bağlantılardan birini seç
+   - Sayfada gezin, ileri/geri git
+   - Yeni sekmede aç butonuyla tarayıcıda aç
 
 ## GitHub Pages Kurulumu
 
-Bu site doğrudan GitHub Pages ile çalışacak şekilde optimize edilmiştir. Repository'nizi GitHub'da oluşturduktan sonra:
+Bu site doğrudan GitHub Pages ile çalışacak şekilde optimize edilmiştir:
 
 1. Settings > Pages
 2. Source: Deploy from a branch
 3. Branch: main / (root)
 
 Site otomatik olarak yayınlanacaktır.
+
+## Telegram Mini App Entegrasyonu
+
+Bu uygulama Telegram Mini App olarak kullanılmak üzere tasarlanmıştır. Telegram içinde web sayfalarını görüntülemek için mükemmel bir çözümdür.
