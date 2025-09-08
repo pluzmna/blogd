@@ -1356,6 +1356,11 @@
             const overlay = document.getElementById('browser-overlay');
             overlay.classList.add('active');
             document.body.style.overflow = 'hidden';
+            
+            // Auto-load Perplexity.ai when browser opens
+            setTimeout(() => {
+                loadPage('https://www.perplexity.ai/');
+            }, 300);
         }
 
         function closeBrowserOverlay() {
